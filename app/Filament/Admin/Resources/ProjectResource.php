@@ -8,6 +8,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Filament\Forms;
 
 class ProjectResource extends Resource
 {
@@ -19,7 +20,14 @@ class ProjectResource extends Resource
     {
         return $form
             ->schema([
-
+                Forms\Components\Repeater::make('test')->columns(2)->schema([
+                    Forms\Components\TextInput::make('hi'),
+                    Forms\Components\Select::make('options')
+                        ->searchable()
+                        ->options([
+                            'one', 'two'
+                        ])
+                ]),
             ]);
     }
 
