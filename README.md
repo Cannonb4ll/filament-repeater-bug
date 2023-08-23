@@ -60,3 +60,5 @@ php artisan key:generate &&
 php artisan filament:upgrade &&
 php artisan migrate:fresh
 ```
+
+test
